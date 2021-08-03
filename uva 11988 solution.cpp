@@ -71,3 +71,47 @@ int main()
     }
     return 0;
 }
+
+
+
+
+//2nd method
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string str;
+    list <char> li;
+    list <char>::iterator it=li.begin();
+    int i;
+    while(cin>>str)
+    {
+        for(i=0;i<str.length();i++)
+        {
+            if(str[i]=='[')
+            {
+                it=li.begin();
+            }
+            else if(str[i]==']')
+            {
+                it=li.end();
+            }
+            else
+            {
+                li.insert(it,str[i]);
+            }
+        }
+
+        for(it=li.begin(); it!=li.end(); it++)
+        {
+            cout<<*it;
+        }
+        cout<<endl;
+        li.clear();
+    }
+    return 0;
+}
+
